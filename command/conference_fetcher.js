@@ -61,7 +61,7 @@ module.exports = {
         function toSpeakerDetails(remoteSpeakersDetails) {
             return {
                 id: remoteSpeakersDetails.uuid,
-                conferenceId: 15,
+                conferenceId: conference.id,
                 lang: remoteSpeakersDetails.lang,
                 blog: remoteSpeakersDetails.blog,
                 talks: toTalks(remoteSpeakersDetails.acceptedTalks),
@@ -96,7 +96,7 @@ module.exports = {
                 return null;
             }
             return {
-                conferenceId: 14,
+                conferenceId: conference.id,
                 fromTime: moment(remoteSlotDetails.fromTimeMillis).tz(conference.timezone).format("YYYY-MM-DD HH:mm"),
                 toTime: moment(remoteSlotDetails.toTimeMillis).tz(conference.timezone).format("YYYY-MM-DD HH:mm"),
                 id: remoteSlotDetails.slotId,
