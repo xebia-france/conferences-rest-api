@@ -1,5 +1,7 @@
 var redis = require('redis');
 
+var redisClient = redis.createClient();
+
 module.exports = {
     availableConferences: [
         {
@@ -19,34 +21,19 @@ module.exports = {
     ],
 
     saveConference: function (conferenceId, speakers, schedule) {
-        var redisClient = redis.createClient();
-        redisClient.on("error", function (err) {
-            console.log("Error " + err);
-        });
         redisClient.set('speakers_' + conferenceId, JSON.stringify(speakers), redis.print);
         redisClient.set('schedule_' + conferenceId, JSON.stringify(schedule), redis.print);
-        redisClient.end();
     },
 
     getSpeakers: function (conferenceId, callback) {
-        var redisClient = redis.createClient();
-        redisClient.on("error", function (err) {
-            console.log("Error " + err);
-        });
         redisClient.get('speakers_' + conferenceId, function (err, reply) {
             callback(JSON.parse(reply));
-            redisClient.end();
         });
     },
 
     getSchedule: function (conferenceId, callback) {
-        var redisClient = redis.createClient();
-        redisClient.on("error", function (err) {
-            console.log("Error " + err);
-        });
         redisClient.get('schedule_' + conferenceId, function (err, reply) {
             callback(JSON.parse(reply));
-            redisClient.end();
         });
     }
 };
