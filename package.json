@@ -1,0 +1,24 @@
+{
+  "name": "conferences",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bluebird": "^2.9.27",
+    "body-parser": "~1.8.1",
+    "cookie-parser": "~1.3.3",
+    "cron": "^1.0.9",
+    "debug": "~2.0.0",
+    "express": "~4.9.0",
+    "jade": "~1.6.0",
+    "lodash": "^3.9.3",
+    "moment": "^2.10.3",
+    "moment-timezone": "^0.4.0",
+    "morgan": "~1.3.0",
+    "request": "^2.57.0",
+    "restler": "^3.2.2",
+    "serve-favicon": "~2.1.3"
+  }
+}
