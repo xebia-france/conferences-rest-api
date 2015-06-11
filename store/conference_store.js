@@ -5,6 +5,20 @@ var redisClient = redis.createClient();
 module.exports = {
     availableConferences: [
         {
+            id: 17,
+            backgroundUrl: "http://blog.xebia.fr/images/devoxxuk-2015-background.png",
+            logoUrl: "http://blog.xebia.fr/images/devoxxuk-2015-logo.png",
+            iconUrl: "http://blog.xebia.fr/images/devoxxuk-2015-icon.png",
+            from: "2015-06-22",
+            name: "DevoxxPL 2015",
+            description: "DevoxxPL 2015",
+            location: "ICE Krakow Congress Centre",
+            baseUrl: "http://cfp.devoxx.pl/api/conferences/DevoxxPL2015",
+            timezone: "Europe/Paris",
+            enabled: true,
+            to: "2015-06-25"
+        },
+        {
             id: 16,
             backgroundUrl: "http://blog.xebia.fr/images/devoxxuk-2015-background.png",
             logoUrl: "http://blog.xebia.fr/images/devoxxuk-2015-logo.png",
