@@ -99,7 +99,7 @@ module.exports = {
                 conferenceId: conference.id,
                 fromTime: moment(remoteSlotDetails.fromTimeMillis).tz(conference.timezone).format("YYYY-MM-DD HH:mm"),
                 toTime: moment(remoteSlotDetails.toTimeMillis).tz(conference.timezone).format("YYYY-MM-DD HH:mm"),
-                id: remoteSlotDetails.slotId,
+                id: !talk ? remoteSlotDetails.slotId : talk.id,
                 speakers: toSlotSpeakers(remoteSlotDetails),
                 partnerSlot: false,
                 note: "",
