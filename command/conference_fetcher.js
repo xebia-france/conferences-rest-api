@@ -108,7 +108,7 @@ module.exports = {
                 track: !talk ? "" : talk.track,
                 kind: !remoteSlotDetails.break ? "Talk" : "Break",
                 type: !talk ? remoteSlotDetails.break.id : talk.talkType,
-                code: remoteSlotDetails.slotId,
+                code: !talk ? remoteSlotDetails.slotId : talk.id,
                 title: !talk ? remoteSlotDetails.break.nameFR : talk.title
             };
         }
