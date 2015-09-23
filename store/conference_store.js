@@ -5,6 +5,20 @@ var redisClient = redis.createClient();
 module.exports = {
     availableConferences: [
         {
+            id: 18,
+            backgroundUrl: "http://devoxxbelgium.s3-eu-west-1.amazonaws.com/wp-content/uploads/2015/06/08154520/Devoxx2015Thema.jpg",
+            logoUrl: "http://blog.xebia.fr/images/devoxxuk-2015-logo.png",
+            iconUrl: "http://blog.xebia.fr/images/devoxxuk-2015-icon.png",
+            from: "2015-11-09",
+            name: "Devoxx 2015",
+            description: "Devoxx 2015",
+            location: "Kinepolis @ Antwerp, Belgium",
+            baseUrl: "http://cfp.devoxx.be/api/conferences/Devoxx2015",
+            timezone: "Europe/Paris",
+            enabled: true,
+            to: "2015-11-13"
+        },
+        {
             id: 17,
             backgroundUrl: "http://blog.xebia.fr/images/devoxxuk-2015-background.png",
             logoUrl: "http://blog.xebia.fr/images/devoxxuk-2015-logo.png",
