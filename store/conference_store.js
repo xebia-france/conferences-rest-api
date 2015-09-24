@@ -7,7 +7,7 @@ module.exports = {
         {
             id: 18,
             backgroundUrl: "http://devoxxbelgium.s3-eu-west-1.amazonaws.com/wp-content/uploads/2015/06/08154520/Devoxx2015Thema.jpg",
-            logoUrl: "http://devoxxbelgium.s3-eu-west-1.amazonaws.com/wp-content/uploads/2015/09/24094603/Logo_Devoxx_transparent.png",
+            logoUrl: "http://devoxxbelgium.s3-eu-west-1.amazonaws.com/wp-content/uploads/2015/09/24131549/Logo_Devoxx_square.png",
             iconUrl: "http://blog.xebia.fr/images/devoxxuk-2015-icon.png",
             from: "2015-11-09",
             name: "Devoxx 2015",
