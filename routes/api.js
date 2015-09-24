@@ -19,5 +19,10 @@ router.get('/api/v1/conferences/:conferenceId/schedule', function (req, res) {
     });
 });
 
+router.get('/api/v1/conferences/:conferenceId/tracks', function (req, res) {
+    conferenceStore.getTracks(req.param('conferenceId'), function (response) {
+        res.json(response);
+    });
+});
 
 module.exports = router;

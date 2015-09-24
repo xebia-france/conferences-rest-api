@@ -130,6 +130,38 @@ module.exports = {
             return data != null;
         }
 
+        function buildTracks(schedule) {
+            return _.uniq(schedule, "track")
+            .filter(function(el) { 
+                return el.track != "" 
+            })
+            .map(function(el) { 
+                return { 
+                    id: el.id, 
+                    name: el.track, 
+                    description: "", 
+                    conferenceId: el.conferenceId, 
+                    descriptionPlainText: "" 
+                } 
+            })
+        }
+
+        function buildSpeakerTracks(speakers, schedule) {
+            return _.map(speakers, function(speak) {
+                var talks = _.filter(schedule, function(sched) { 
+                    return _.any(sched.speakers, {'id': speak.id});
+                })
+                .map(function(talk) {
+                    return {
+                        presentationId: talk.id,
+                        title: talk.title
+                    };
+                });
+                speak.talks = talks;
+                return speak;
+            })
+        }
+
         join(
             speakersPromises,
             slotPromises(mondayScheduleRequest),
@@ -138,8 +170,7 @@ module.exports = {
             slotPromises(thursdayScheduleRequest),
             slotPromises(fridayScheduleRequest)
         ).
-            then(function (responses) {
-                var speakers = responses[0];
+            then(function (responses) {                
                 var schedule = [];
                 schedule = schedule.concat(_.map(responses[1].slots, toSlotDetails).filter(filterNull));
                 schedule = schedule.concat(_.map(responses[2].slots, toSlotDetails).filter(filterNull));
@@ -147,7 +178,10 @@ module.exports = {
                 schedule = schedule.concat(_.map(responses[4].slots, toSlotDetails).filter(filterNull));
                 schedule = schedule.concat(_.map(responses[5].slots, toSlotDetails).filter(filterNull));
 
-                conferenceStore.saveConference(conference.id, speakers, schedule);
+                var tracks = buildTracks(schedule);
+                var speakers = buildSpeakerTracks(responses[0], schedule);
+
+                conferenceStore.saveConference(conference.id, speakers, schedule, tracks);
                 console.log('Data saved for ' + conference.name);
             });
     }

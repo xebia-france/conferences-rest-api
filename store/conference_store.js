@@ -48,9 +48,10 @@ module.exports = {
         }
     ],
 
-    saveConference: function (conferenceId, speakers, schedule) {
+    saveConference: function (conferenceId, speakers, schedule, tracks) {
         redisClient.set('speakers_' + conferenceId, JSON.stringify(speakers), redis.print);
         redisClient.set('schedule_' + conferenceId, JSON.stringify(schedule), redis.print);
+        redisClient.set('tracks_' + conferenceId, JSON.stringify(tracks), redis.print);
     },
 
     getSpeakers: function (conferenceId, callback) {
@@ -61,6 +62,12 @@ module.exports = {
 
     getSchedule: function (conferenceId, callback) {
         redisClient.get('schedule_' + conferenceId, function (err, reply) {
+            callback(JSON.parse(reply));
+        });
+    },
+
+    getTracks: function (conferenceId, callback) {
+        redisClient.get('tracks_' + conferenceId, function (err, reply) {
             callback(JSON.parse(reply));
         });
     }
