@@ -153,7 +153,7 @@ module.exports = {
                 })
                 .map(function(talk) {
                     return {
-                        presentationId: talk.id,
+                        identifier: talk.id,
                         title: talk.title
                     };
                 });
