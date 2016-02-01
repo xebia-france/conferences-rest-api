@@ -6,8 +6,8 @@ module.exports = {
     availableConferences: [
         {
             id: 19,
-            backgroundUrl: "http://devoxxbelgium.s3-eu-west-1.amazonaws.com/wp-content/uploads/2015/06/08154520/Devoxx2015Thema.jpg",
-            logoUrl: "http://devoxxbelgium.s3-eu-west-1.amazonaws.com/wp-content/uploads/2015/09/24131549/Logo_Devoxx_square.png",
+            backgroundUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/doxxed-days-zurich-2016/Zurich-Photo1.jpg",
+            logoUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/doxxed-days-zurich-2016/iTunesArtwork.png",
             iconUrl: "http://blog.xebia.fr/images/devoxxuk-2015-icon.png",
             from: "2016-03-03",
             name: "Voxxed Days Zürich",
