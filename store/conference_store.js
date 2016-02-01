@@ -6,7 +6,7 @@ module.exports = {
     availableConferences: [
         {
             id: 19,
-            backgroundUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/doxxed-days-zurich-2016/Zurich-Photo1.jpg",
+            backgroundUrl: "https://voxxeddays.com/zurich16/wp-content/uploads/sites/10/2015/10/zurich_by_night.jpg",
             logoUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/doxxed-days-zurich-2016/iTunesArtwork.png",
             iconUrl: "http://blog.xebia.fr/images/devoxxuk-2015-icon.png",
             from: "2016-03-03",
