@@ -5,6 +5,34 @@ var redisClient = redis.createClient();
 module.exports = {
     availableConferences: [
         {
+            id: 21,
+            backgroundUrl: "http://devoxx.fr/assets/photos/2015/grande_salle2.jpg",
+            logoUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/devoxx-france-2016/devoxxFranceLogo.png",
+            iconUrl: "http://blog.xebia.fr/images/devoxxuk-2015-icon.png",
+            from: "2016-04-20",
+            name: "Devoxx France 2016",
+            description: "Devoxx France 2016",
+            location: "Sihlcity Cinema",
+            baseUrl: "https://cfp.devoxx.fr/api/conferences/Devoxx2016",
+            timezone: "Europe/Paris",
+            enabled: true,
+            to: "2016-04-22"
+        },
+        {
+            id: 20,
+            backgroundUrl: "https://voxxeddays.com/ticino16/wp-content/uploads/sites/14/2015/11/lago.jpg",
+            logoUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/doxxed-days-zurich-2016/iTunesArtwork.png",
+            iconUrl: "http://blog.xebia.fr/images/devoxxuk-2015-icon.png",
+            from: "2016-04-30",
+            name: "Voxxed Days Ticino",
+            description: "Voxxed Days Ticino",
+            location: "Palazzo dei Congressi, Lugano",
+            baseUrl: "https://cfp-vdz.exteso.com/api/conferences/VDZ16",
+            timezone: "Europe/Zurich",
+            enabled: true,
+            to: "2016-04-30"
+        },
+        {
             id: 19,
             backgroundUrl: "https://voxxeddays.com/zurich16/wp-content/uploads/sites/10/2015/10/zurich_by_night.jpg",
             logoUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/doxxed-days-zurich-2016/iTunesArtwork.png",
