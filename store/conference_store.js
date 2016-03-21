@@ -27,7 +27,7 @@ module.exports = {
             name: "Voxxed Days Ticino",
             description: "Voxxed Days Ticino",
             location: "Palazzo dei Congressi, Lugano",
-            baseUrl: "https://cfp-vdz.exteso.com/api/conferences/VDZ16",
+            baseUrl: "https://cfp-vdt.exteso.com/api/conferences/VDT16",
             timezone: "Europe/Zurich",
             enabled: true,
             to: "2016-04-30"
