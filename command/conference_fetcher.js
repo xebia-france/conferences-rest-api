@@ -175,7 +175,7 @@ module.exports = {
             slotPromises(wednesdayScheduleRequest),
             slotPromises(thursdayScheduleRequest),
             slotPromises(fridayScheduleRequest),
-            slotPromises(fridayScheduleRequest)
+            slotPromises(saturdayScheduleRequest)
         ).
             then(function (responses) {                
                 var schedule = [];
