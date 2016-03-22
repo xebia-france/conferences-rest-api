@@ -12,6 +12,12 @@ module.exports = {
                 'User-Agent': 'conferences-fetcher'
             }
         };
+        var tracksRequest = {
+            url: conference.baseUrl + '/tracks',
+            headers: {
+                'User-Agent': 'conferences-fetcher'
+            }
+        };
         var mondayScheduleRequest = {
             url: conference.baseUrl + '/schedules/monday',
             headers: {
@@ -69,6 +75,8 @@ module.exports = {
                 return toSpeakerDetails(JSON.parse(response));
             }
         );
+
+        var tracksPromises = rp(tracksRequest).then(JSON.parse);
 
         function toSpeakerDetails(remoteSpeakersDetails) {
             return {
@@ -155,12 +163,25 @@ module.exports = {
                     name: el.track, 
                     description: "", 
                     conferenceId: el.conferenceId, 
-                    descriptionPlainText: "" 
+                    descriptionPlainText: "",
+                    trackId: el.trackId
                 } 
             })
         }
 
-        function buildSpeakerTracks(speakers, schedule) {
+        function buildTracks(tracks, schedule) {
+            return _.map(tracks["tracks"], function(track) {
+                return { 
+                    id: track.id, 
+                    name: track.title, 
+                    description: track.description,
+                    descriptionPlainText: track.description,
+                    image: track.imgsrc
+                } 
+            })
+        }
+
+        function buildSpeakers(speakers, schedule) {
             return _.map(speakers, function(speak) {
                 var talks = _.filter(schedule, function(sched) { 
                     return _.any(sched.speakers, {'id': speak.id});
@@ -184,7 +205,8 @@ module.exports = {
             slotPromises(thursdayScheduleRequest),
             slotPromises(fridayScheduleRequest),
             slotPromises(saturdayScheduleRequest),
-            slotPromises(sundayScheduleRequest)
+            slotPromises(sundayScheduleRequest),
+            tracksPromises
         ).
             then(function (responses) {                
                 var schedule = [];
@@ -196,8 +218,8 @@ module.exports = {
                 schedule = schedule.concat(_.map(responses[6].slots, toSlotDetails).filter(filterNull));
                 schedule = schedule.concat(_.map(responses[7].slots, toSlotDetails).filter(filterNull));
 
-                var tracks = buildTracks(schedule);
-                var speakers = buildSpeakerTracks(responses[0], schedule);
+                var tracks = buildTracks(responses[8], schedule);
+                var speakers = buildSpeakers(responses[0], schedule);
 
                 conferenceStore.saveConference(conference.id, speakers, schedule, tracks);
                 console.log('Data saved for ' + conference.name);
