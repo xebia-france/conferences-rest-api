@@ -42,12 +42,6 @@ module.exports = {
                 'User-Agent': 'conferences-fetcher'
             }
         };
-        var saturdayScheduleRequest = {
-            url: conference.baseUrl + '/schedules/saturday',
-            headers: {
-                'User-Agent': 'conferences-fetcher'
-            }
-        };
 
         var speakersPromises = rp(speakersRequest).then(JSON.parse).map(
             function (remoteSpeaker) {
@@ -174,8 +168,7 @@ module.exports = {
             slotPromises(tuesdayScheduleRequest),
             slotPromises(wednesdayScheduleRequest),
             slotPromises(thursdayScheduleRequest),
-            slotPromises(fridayScheduleRequest),
-            slotPromises(saturdayScheduleRequest)
+            slotPromises(fridayScheduleRequest)
         ).
             then(function (responses) {                
                 var schedule = [];
@@ -184,7 +177,6 @@ module.exports = {
                 schedule = schedule.concat(_.map(responses[3].slots, toSlotDetails).filter(filterNull));
                 schedule = schedule.concat(_.map(responses[4].slots, toSlotDetails).filter(filterNull));
                 schedule = schedule.concat(_.map(responses[5].slots, toSlotDetails).filter(filterNull));
-                schedule = schedule.concat(_.map(responses[6].slots, toSlotDetails).filter(filterNull));
 
                 var tracks = buildTracks(schedule);
                 var speakers = buildSpeakerTracks(responses[0], schedule);
