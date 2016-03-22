@@ -118,10 +118,12 @@ module.exports = {
                 summary: !talk ? "" : talk.summaryAsHtml,
                 room: remoteSlotDetails.roomName,
                 track: !talk ? "" : talk.track,
+                trackId: !talk ? "" : talk.trackId,
                 kind: !remoteSlotDetails.break ? "Talk" : "Break",
                 type: !talk ? remoteSlotDetails.break.id : talk.talkType,
                 code: !talk ? remoteSlotDetails.slotId : talk.id,
-                title: !talk ? remoteSlotDetails.break.nameFR : talk.title
+                title: !talk ? remoteSlotDetails.break.nameFR : talk.title,
+                lang: !talk ? "" : talk.lang
             };
         }
 
@@ -143,7 +145,7 @@ module.exports = {
         }
 
         function buildTracks(schedule) {
-            return _.uniq(schedule, "track")
+            return _.uniq(schedule, "trackId")
             .filter(function(el) { 
                 return el.track != "" 
             })
