@@ -5,10 +5,24 @@ var redisClient = redis.createClient();
 module.exports = {
     availableConferences: [
         {
+            id: 22,
+            backgroundUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/la-product-conf-2016/banner.jpg",
+            logoUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/la-product-conf-2016/logo.png",
+            iconUrl: "",
+            from: "2016-06-21",
+            to: "2016-06-21",
+            name: "La Product Conf",
+            description: "La Product Conf",
+            location: "CAP 15",
+            baseUrl: "https://cfp.devoxx.fr/api/conferences/Devoxx2016",
+            timezone: "Europe/Paris",
+            enabled: true
+        },
+        {
             id: 21,
             backgroundUrl: "http://devoxx.fr/assets/photos/2015/grande_salle2.jpg",
             logoUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/devoxx-france-2016/devoxxFranceLogo.png",
-            iconUrl: "http://blog.xebia.fr/images/devoxxuk-2015-icon.png",
+            iconUrl: "",
             from: "2016-04-20",
             name: "Devoxx France 2016",
             description: "Devoxx France 2016",
@@ -22,7 +36,7 @@ module.exports = {
             id: 20,
             backgroundUrl: "https://voxxeddays.com/ticino16/wp-content/uploads/sites/14/2015/11/lago.jpg",
             logoUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/doxxed-days-zurich-2016/iTunesArtwork.png",
-            iconUrl: "http://blog.xebia.fr/images/devoxxuk-2015-icon.png",
+            iconUrl: "",
             from: "2016-04-30",
             name: "Voxxed Days Ticino",
             description: "Voxxed Days Ticino",
