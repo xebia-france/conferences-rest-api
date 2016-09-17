@@ -42,10 +42,19 @@ new CronJob('0,30 * * * *', function () {
 loadConferences();
 
 function loadConferences() {
-    _.forEach(conferenceStore.availableConferences, function (conference) {
-        console.log('Start job for ' + conference.name);
-        conferencesFetcher.fetch(conference);
-    });
+    _.chain(conferenceStore.availableConferences)
+        .filter(function(conference) {
+            if (conference.enabled && conference.shouldFetch) {
+                return true
+            }
+            console.log('Skipped ' + conference.name);
+            return false;
+        })
+        .forEach(function (conference) {
+            console.log('Start job for ' + conference.name);
+            conferencesFetcher.fetch(conference);
+        })
+        .value();
 }
 // error handlers
 
