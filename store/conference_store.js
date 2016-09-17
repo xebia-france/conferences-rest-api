@@ -5,6 +5,21 @@ var redisClient = redis.createClient();
 module.exports = {
     availableConferences: [
         {
+            id: 23,
+            backgroundUrl: "http://frenchkit.fr/wp-content/uploads/2016/04/frenchkit-background-conference-ios.jpg",
+            logoUrl: "https://s3-eu-west-1.amazonaws.com/confcompanion.xebia.fr/FrenchKit/logo.png",
+            logoHasTransparentBackground: true,
+            iconUrl: "",
+            from: "2016-09-23",
+            to: "2016-09-24",
+            name: "FrenchKit",
+            description: "FrenchKit",
+            location: "Pan Piper",
+            baseUrl: "-",
+            timezone: "Europe/Paris",
+            enabled: true
+        },
+        {
             id: 22,
             backgroundUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/la-product-conf-2016/banner.jpg",
             logoUrl: "https://s3.amazonaws.com/civetta-works/works/xebia/conf-companion/la-product-conf-2016/logo.png",
