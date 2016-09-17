@@ -6,6 +6,10 @@ var conferenceStore = require('../store/conference_store')
 
 module.exports = {
     fetch: function (conference) {
+        if (!conference.shouldFetch || !conference.enabled) {
+            return;
+        }
+
         var speakersRequest = {
             url: conference.baseUrl + '/speakers',
             headers: {

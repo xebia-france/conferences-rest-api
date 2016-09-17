@@ -15,6 +15,7 @@ module.exports = {
             name: "FrenchKit",
             description: "FrenchKit",
             location: "Pan Piper",
+            shouldFetch: false,
             baseUrl: "-",
             timezone: "Europe/Paris",
             enabled: true
@@ -29,7 +30,8 @@ module.exports = {
             name: "La Product Conf",
             description: "La Product Conf",
             location: "CAP 15",
-            baseUrl: "https://cfp.devoxx.fr/api/conferences/Devoxx2016",
+            shouldFetch: false,
+            baseUrl: "-",
             timezone: "Europe/Paris",
             enabled: true
         },
@@ -42,6 +44,7 @@ module.exports = {
             name: "Devoxx France 2016",
             description: "Devoxx France 2016",
             location: "Sihlcity Cinema",
+            shouldFetch: true,
             baseUrl: "https://cfp.devoxx.fr/api/conferences/Devoxx2016",
             timezone: "Europe/Paris",
             enabled: true,
@@ -56,9 +59,10 @@ module.exports = {
             name: "Voxxed Days Ticino",
             description: "Voxxed Days Ticino",
             location: "Palazzo dei Congressi, Lugano",
+            shouldFetch: true,
             baseUrl: "https://cfp-vdt.exteso.com/api/conferences/VDT16",
             timezone: "Europe/Zurich",
-            enabled: true,
+            enabled: false,
             to: "2016-04-30"
         },
         {
@@ -70,6 +74,7 @@ module.exports = {
             name: "Voxxed Days Zürich",
             description: "Voxxed Days Zürich",
             location: "Sihlcity Cinema",
+            shouldFetch: true,
             baseUrl: "https://cfp-vdz.exteso.com/api/conferences/VDZ16",
             timezone: "Europe/Zurich",
             enabled: true,
@@ -84,9 +89,10 @@ module.exports = {
             name: "Devoxx 2015",
             description: "Devoxx 2015",
             location: "Kinepolis @ Antwerp, Belgium",
+            shouldFetch: true,
             baseUrl: "http://cfp.devoxx.be/api/conferences/Devoxx2015",
             timezone: "Europe/Paris",
-            enabled: true,
+            enabled: false,
             to: "2015-11-13"
         },
         {
@@ -98,9 +104,10 @@ module.exports = {
             name: "DevoxxPL 2015",
             description: "DevoxxPL 2015",
             location: "ICE Krakow Congress Centre",
+            shouldFetch: true,
             baseUrl: "http://cfp.devoxx.pl/api/conferences/DevoxxPL2015",
             timezone: "Europe/Paris",
-            enabled: true,
+            enabled: false,
             to: "2015-06-25"
         },
         {
@@ -112,9 +119,10 @@ module.exports = {
             name: "DevoxxUK 2015",
             description: "DevoxxUK 2015",
             location: "London - Business Design Centre",
+            shouldFetch: true,
             baseUrl: "http://cfp.devoxx.co.uk/api/conferences/DevoxxUK2015",
             timezone: "Europe/London",
-            enabled: true,
+            enabled: false,
             to: "2015-06-19"
         }
     ],
