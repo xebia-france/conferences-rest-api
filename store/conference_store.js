@@ -77,7 +77,7 @@ module.exports = {
             shouldFetch: true,
             baseUrl: "https://cfp-vdz.exteso.com/api/conferences/VDZ16",
             timezone: "Europe/Zurich",
-            enabled: true,
+            enabled: false,
             to: "2016-03-03"
         },
         {
